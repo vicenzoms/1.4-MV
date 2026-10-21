@@ -1,21 +1,9 @@
-# -*- coding: utf-8 -*-
-import streamlit as st
-import streamlit.components.v1 as components
-
-# Configuração da página no Streamlit
-st.set_page_config(
-    page_title="Uma História de Amor Especial",
-    page_icon="❤️",
-    layout="wide"
-)
-
-def get_html_content():
-    return """<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="pt-PT" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Uma História de Amor Especial &#x2764;&#xFE0F;</title>
+    <title>Uma História de Amor Especial ❤️</title>
     
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -54,12 +42,14 @@ def get_html_content():
     </script>
 
     <style>
+        /* Fundo e Estilos Personalizados */
         body {
             background-color: #FAF4F0;
             color: #4A3B32;
             overflow-x: hidden;
         }
 
+        /* Canvas de Partículas do Fundo */
         #heart-canvas {
             position: fixed;
             top: 0;
@@ -70,6 +60,7 @@ def get_html_content():
             z-index: 1;
         }
 
+        /* Efeito de Vidro (Glassmorphism) */
         .glass-card {
             background: rgba(255, 255, 255, 0.85);
             backdrop-filter: blur(12px);
@@ -77,6 +68,7 @@ def get_html_content():
             box-shadow: 0 10px 30px rgba(157, 2, 8, 0.06);
         }
 
+        /* Moldura Polaroid */
         .polaroid-frame {
             background: #ffffff;
             padding: 14px 14px 45px 14px;
@@ -89,6 +81,7 @@ def get_html_content():
             box-shadow: 0 20px 40px rgba(157, 2, 8, 0.2);
         }
 
+        /* Envelope e Animação 3D Flip */
         .perspective-1000 {
             perspective: 1000px;
         }
@@ -102,12 +95,14 @@ def get_html_content():
             transform: rotateY(180deg);
         }
 
+        /* Margens e Contornos Dourados */
         .gold-border {
             border: 2px solid transparent;
             background: linear-gradient(white, white) padding-box,
                         linear-gradient(135deg, #e6c875, #d4af37, #997819) border-box;
         }
 
+        /* Efeitos de Animação de Pulso */
         @keyframes customPulse {
             0%, 100% { transform: scale(1); }
             50% { transform: scale(1.08); }
@@ -133,7 +128,7 @@ def get_html_content():
             <div class="space-y-3">
                 <span class="text-xs font-semibold uppercase tracking-widest text-warmGold">Celebração de Namoro</span>
                 <h1 class="font-cursive text-5xl md:text-7xl text-blush tracking-wide">
-                    Feliz Mesversário de 1.4 Anos! &#x2764;&#xFE0F;
+                    Feliz Mesversário de 1.4 Anos! ❤️
                 </h1>
                 <p class="text-sm font-medium text-rose-200">1 Ano e 4 Meses da Nossa Linda História de Amor</p>
             </div>
@@ -179,7 +174,7 @@ def get_html_content():
         </div>
     </div>
 
-    <!-- CONTEÚDO PRINCIPAL -->
+    <!-- CONTEÚDO PRINCIPAL (ROLAGEM LONGA / LONG SCROLL) -->
     <main class="relative z-10 max-w-4xl mx-auto px-4 py-12 space-y-24">
 
         <!-- PAINEL DE PERSONALIZAÇÃO RÁPIDA -->
@@ -243,6 +238,7 @@ def get_html_content():
 
             <!-- FOTO 1: O SORRISO -->
             <div class="glass-card rounded-3xl overflow-hidden p-6 md:p-8 grid md:grid-cols-2 gap-8 items-center">
+                <!-- Moldura Polaroid Foto 1 -->
                 <div class="relative group polaroid-frame -rotate-2 mx-auto w-full max-w-sm">
                     <div class="aspect-3/4 overflow-hidden rounded bg-roseSoft relative cursor-pointer" onclick="openLightbox('image_7ce6c7.jpg', 'O sorriso que ilumina os meus dias')">
                         <img id="img-moment-1" src="image_7ce6c7.jpg" alt="O sorriso que ilumina os meus dias" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" onerror="this.src='https://images.unsplash.com/photo-1522673607200-164d1b6ce486?q=80&w=800&auto=format&fit=crop'">
@@ -296,6 +292,7 @@ def get_html_content():
                     </div>
                 </div>
 
+                <!-- Moldura Polaroid Foto 2 -->
                 <div class="relative group polaroid-frame rotate-2 mx-auto w-full max-w-sm md:order-2 order-1">
                     <div class="aspect-3/4 overflow-hidden rounded bg-roseSoft relative cursor-pointer" onclick="openLightbox('image_7ce6a6.jpg', 'O teu carinho único que me faz o homem mais sortudo')">
                         <img id="img-moment-2" src="image_7ce6a6.jpg" alt="O teu carinho único que me faz o homem mais sortudo" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" onerror="this.src='https://images.unsplash.com/photo-1518199266791-5375a83190b7?q=80&w=800&auto=format&fit=crop'">
@@ -306,13 +303,14 @@ def get_html_content():
                         </div>
                     </div>
                     <div class="text-center mt-3">
-                        <span contenteditable="true" class="font-cursive text-2xl text-deepRose block">O teu carinho único &#128150;</span>
+                        <span contenteditable="true" class="font-cursive text-2xl text-deepRose block">O teu carinho único 💖</span>
                     </div>
                 </div>
             </div>
 
             <!-- FOTO 3: O BEIJO -->
             <div class="glass-card rounded-3xl overflow-hidden p-6 md:p-8 grid md:grid-cols-2 gap-8 items-center">
+                <!-- Moldura Polaroid Foto 3 -->
                 <div class="relative group polaroid-frame -rotate-1 mx-auto w-full max-w-sm">
                     <div class="aspect-3/4 overflow-hidden rounded bg-roseSoft relative cursor-pointer" onclick="openLightbox('image_7ce6e6.jpg', 'O nosso beijo especial')">
                         <img id="img-moment-3" src="image_7ce6e6.jpg" alt="O nosso beijo especial" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" onerror="this.src='https://images.unsplash.com/photo-1516589178581-6cd7833ae3b2?q=80&w=800&auto=format&fit=crop'">
@@ -347,7 +345,7 @@ def get_html_content():
             </div>
         </section>
 
-        <!-- 5. CARTA DE AMOR INTERATIVA EM 3D -->
+        <!-- 5. CARTA DE AMOR INTERATIVA EM 3D (TEXTO1.PDF) -->
         <section class="space-y-8 text-center">
             <div class="space-y-2">
                 <h3 class="font-cursive text-5xl text-passionRed">Carta do Meu Coração</h3>
@@ -364,14 +362,14 @@ def get_html_content():
                         <div class="w-20 h-20 rounded-full bg-roseSoft flex items-center justify-center text-passionRed text-4xl mb-4 border border-rose-200 animate-pulse">
                             <i class="fa-solid fa-envelope-open-text"></i>
                         </div>
-                        <h4 class="font-serif text-2xl font-bold text-deepRose mb-1">Para o Amor da Minha Vida &#x2764;&#xFE0F;</h4>
+                        <h4 class="font-serif text-2xl font-bold text-deepRose mb-1">Para o Amor da Minha Vida ❤️</h4>
                         <p class="text-xs font-semibold text-warmGold uppercase tracking-widest mb-6">Especial 1.4 Anos de Namoro</p>
                         <span class="inline-flex items-center gap-2 text-xs font-semibold px-6 py-3 rounded-full bg-passionRed text-white shadow-md hover:bg-rose-700 transition-colors">
                             <i class="fa-solid fa-hand-pointer"></i> Clica para Abrir a Tua Carta
                         </span>
                     </div>
 
-                    <!-- VERSO / A CARTA REVELADA -->
+                    <!-- VERSO / A CARTA REVELADA (TEXTO EXATO DO PDF) -->
                     <div class="absolute inset-0 w-full h-full rounded-3xl bg-white border-2 border-rose-200 p-8 flex flex-col justify-between text-left rotate-y-180 backface-hidden shadow-2xl overflow-y-auto">
                         <div class="space-y-4">
                             <div class="flex justify-between items-center border-b border-rose-100 pb-3">
@@ -384,7 +382,7 @@ def get_html_content():
                             </p>
                         </div>
                         <div class="text-right pt-4 border-t border-rose-100 mt-4">
-                            <span contenteditable="true" class="font-cursive text-2xl text-deepRose block">Para Sempre Teu &#x2764;&#xFE0F;</span>
+                            <span contenteditable="true" class="font-cursive text-2xl text-deepRose block">Para Sempre Teu ❤️</span>
                             <span class="text-xs text-gray-400">Clica para fechar a carta</span>
                         </div>
                     </div>
@@ -392,8 +390,8 @@ def get_html_content():
                 </div>
             </div>
         </section>
-    </main>
 
+        <!-- 6. CARTÕES "MOTIVOS PARA TE AMAR" -->
     <!-- LIGHTBOX MODAL PARA EXPANDIR FOTOS -->
     <div id="lightbox-modal" class="fixed inset-0 z-50 bg-black/90 hidden backdrop-blur-md flex flex-col items-center justify-center p-4" onclick="closeLightbox()">
         <button class="absolute top-6 right-6 text-white text-3xl hover:text-rose-400 transition-colors">
@@ -405,24 +403,14 @@ def get_html_content():
         </div>
     </div>
 
-    <!-- RODAPÉ -->
+    <!-- ROODAPÉ -->
     <footer class="relative z-10 border-t border-rose-100 py-6 text-center text-xs text-gray-500 bg-white/60">
         <p>Comemoração do Nosso Mesversário de 1.4 Anos ✨ Feito com todo o amor do mundo!</p>
     </footer>
 
     <!-- LÓGICA JAVASCRIPT INTERATIVA -->
     <script>
-        function openOurWorld() {
-            const overlay = document.getElementById('welcome-overlay');
-            if (overlay) {
-                overlay.style.opacity = '0';
-                setTimeout(() => {
-                    overlay.style.display = 'none';
-                }, 1000);
-            }
-            triggerLoveShower();
-        }
-
+        // --- Lightbox Modal ---
         function openLightbox(src, caption) {
             const modal = document.getElementById('lightbox-modal');
             document.getElementById('lightbox-img').src = src;
@@ -434,7 +422,8 @@ def get_html_content():
             document.getElementById('lightbox-modal').classList.add('hidden');
         }
 
-        let loveStartDate = new Date('2025-06-21T00:00:00');
+        // --- 2. Contador de Tempo de Namoro em Tempo Real ---
+        let loveStartDate = new Date('2022-06-12T20:00:00');
 
         function updateStartDate(newDateString) {
             if (newDateString) {
@@ -469,6 +458,7 @@ def get_html_content():
         setInterval(calculateLoveTime, 1000);
         calculateLoveTime();
 
+        // --- 3. Ocultar / Mostrar Leitor do Spotify ---
         let isPlayerVisible = true;
         function togglePlayer() {
             const container = document.getElementById('spotify-player-container');
@@ -485,28 +475,49 @@ def get_html_content():
             }
         }
 
+        // --- 4. Carregar Imagens de Ficheiros Locais ---
+        function uploadPhoto(event, targetImgId) {
+            const file = event.target.files[0];
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = function(e) {
+                    document.getElementById(targetImgId).src = e.target.result;
+                }
+                reader.readAsDataURL(file);
+            }
+        }
+
+        // --- 5. Animação 3D do Envelope da Carta ---
         function toggleCardFlip(element) {
             const card = document.getElementById('envelope-card');
-            if (card) {
-                card.classList.toggle('rotate-y-180');
+            card.classList.toggle('rotate-y-180');
+        }
+
+        // --- 6. Revelar Razões dos Cartões ---
+        function revealReason(cardElement) {
+            const hiddenReason = cardElement.querySelector('.hidden-reason');
+            const reasonText = cardElement.querySelector('.reason-text');
+            
+            if (hiddenReason && reasonText) {
+                reasonText.innerHTML = `<span class="text-deepRose font-medium animate-fade-in">${hiddenReason.innerHTML}</span>`;
             }
         }
 
+        // --- 7. Efeito de Chuva de Corações (Confetti) ---
         function triggerLoveShower() {
-            if (typeof confetti === 'function') {
-                var scalar = 2;
-                var heart = confetti.shapeFromText({ text: '❤️', scalar });
+            var scalar = 2;
+            var heart = confetti.shapeFromText({ text: '❤️', scalar });
 
-                confetti({
-                    shapes: [heart],
-                    particleCount: 45,
-                    spread: 120,
-                    origin: { y: 0.65 },
-                    scalar: 2
-                });
-            }
+            confetti({
+                shapes: [heart],
+                particleCount: 45,
+                spread: 120,
+                origin: { y: 0.65 },
+                scalar: 2
+            });
         }
 
+        // --- 8. Partículas Flutuantes do Fundo (Canvas) ---
         const canvas = document.getElementById('heart-canvas');
         const ctx = canvas.getContext('2d');
 
@@ -565,7 +576,4 @@ def get_html_content():
         animateHearts();
     </script>
 </body>
-</html>"""
-
-# Renderiza o conteúdo HTML via Streamlit
-components.html(get_html_content(), height=3500, scrolling=True)
+</html>
