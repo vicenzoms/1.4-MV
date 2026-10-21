@@ -571,7 +571,6 @@
                 h.update();
                 h.draw();
             });
-            requestAnimationFrame(animateHearts);
         }
         animateHearts();
     </script>
